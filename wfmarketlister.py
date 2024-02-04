@@ -15,7 +15,7 @@ if runType.lower().strip(" ").strip("\n") in ['warframe', 'prime', 'sentinel', '
     runType = runType.strip("\n")
 
 def sendRequest(url, timeDuration=15):
-    r1 = requests.get(verify=False, proxies=proxies, url=url)
+    r1 = requests.get(verify=False, url=url)
     if r1.status_code == 429:
         time.sleep(timeDuration)
         return None
